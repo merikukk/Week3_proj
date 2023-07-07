@@ -198,7 +198,7 @@ function _getData() {
         case 3:
           datas = _context.sent;
           _context.next = 6;
-          return datas.text();
+          return dataset.dimension.Alue.category.label(datas);
         case 6:
           x = _context.sent;
           console.log("Data received");
