@@ -182,6 +182,7 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 document.getElementById("app").innerHTML = "\n<h1></h1>\n<div>\n  \n</div>\n";
 var link = "https://statfin.stat.fi/PxWeb/sq/4e244893-7761-4c4f-8e55-7a8d41d86eff";
+getData();
 function getData(_x) {
   return _getData.apply(this, arguments);
 }
@@ -191,22 +192,33 @@ function _getData() {
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
-          _context.next = 2;
+          _context.prev = 0;
+          _context.next = 3;
           return fetch(link);
-        case 2:
+        case 3:
           datas = _context.sent;
-          _context.next = 5;
+          _context.next = 6;
           return datas.text();
-        case 5:
+        case 6:
           x = _context.sent;
+          console.log("Data received");
           fetchData(x);
-        case 7:
+          _context.next = 14;
+          break;
+        case 11:
+          _context.prev = 11;
+          _context.t0 = _context["catch"](0);
+          console.log(Error);
+        case 14:
         case "end":
           return _context.stop();
       }
-    }, _callee);
+    }, _callee, null, [[0, 11]]);
   }));
   return _getData.apply(this, arguments);
+}
+function fetchData(x) {
+  document.getElementById("tablein").appendChild(x);
 }
 },{"./styles.css":"src/styles.css"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
