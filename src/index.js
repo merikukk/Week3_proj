@@ -14,7 +14,7 @@ getData();
 async function getData(link) {
   try {
     let datas = await fetch(link);
-    let x = await dataset.dimension.Alue.category.label(datas);
+    let x = await datas.dataset.dimension.Alue.category.label;
     console.log("Data received");
     fetchData(x);
   } catch {
